@@ -53,23 +53,8 @@ variable "ttl-enabled" {
   type        = "string"
 }
 
-variable "lsi-name" {
-  description = "The name of the LSI table."
-  type        = "string"
-}
-
-variable "lsi-range-key" {
-  description = "The range key of the LSI table."
-  type        = "string"
-}
-
-variable "lsi-projection-type" {
-  description = "The projection applied to the LSI table."
-  type        = "string"
-}
-
-variable "lsi-non-key-attributes" {
-  description = "The list of attributes to be projected to the LSI table."
+variable "lsi-list" {
+  description = "A list of LSI map descriptions."
   type        = "list"
 }
 

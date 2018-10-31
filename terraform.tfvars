@@ -8,10 +8,6 @@ ddb-range-key-type      = "S"
 ddb-encryption          = false
 ttl-attribute-name      = ""
 ttl-enabled             = false
-lsi-name                = "lsi-table"
-lsi-range-key           = "ddb-range-key"
-lsi-projection-type     = "KEYS_ONLY"
-lsi-non-key-attributes  = []
 gsi-name                = "gsi-table"
 gsi-hash-key            = "ddb-hash-key"
 gsi-range-key           = "ddb-range-key"
@@ -22,3 +18,12 @@ gsi-non-key-attributes  = []
 tags                    = {}
 region                  = "us-east-1"
 ddb-attributes          = []
+# lsi-list                = [{
+#      name               = "lsi-table"
+#      range_key          = "ddb-range-key"
+#      projection_type    = "KEYS_ONLY"
+#      non_key_attributes = []
+# }]
+lsi-list              = []
+
+
