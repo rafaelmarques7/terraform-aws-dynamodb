@@ -58,38 +58,8 @@ variable "lsi-list" {
   type        = "list"
 }
 
-variable "gsi-name" {
-  description = "The name of the GSI table."
-  type        = "string"
-}
-
-variable "gsi-hash-key" {
-  description = "The primary key of the GSI table."
-  type        = "string"
-}
-
-variable "gsi-range-key" {
-  description = "The secondary key of the GSI table."
-  type        = "string"
-}
-
-variable "gsi-read-capacity" {
-  description = "The read capacity, in units, of the GSI table."
-  type        = "string"
-}
-
-variable "gsi-write-capacity" {
-  description = "The write capacity, in units, of the GSI table."
-  type        = "string"
-}
-
-variable "gsi-projection-type" {
-  description = "The projection applied to the GSI table."
-  type        = "string"
-}
-
-variable "gsi-non-key-attributes" {
-  description = "The list of attributes to be projected to the GSI table."
+variable "gsi-list" {
+  description = "A list of GSI map descriptions."
   type        = "list"
 }
 

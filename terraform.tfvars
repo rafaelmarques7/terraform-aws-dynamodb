@@ -18,12 +18,22 @@ gsi-non-key-attributes  = []
 tags                    = {}
 region                  = "us-east-1"
 ddb-attributes          = []
+lsi-list                = []
 # lsi-list                = [{
 #      name               = "lsi-table"
 #      range_key          = "ddb-range-key"
 #      projection_type    = "KEYS_ONLY"
 #      non_key_attributes = []
 # }]
-lsi-list              = []
+gsi-list                = []
+# gsi-list                = [{
+#     name                = "gsi-table"
+#     hash_key            = "ddb-hash-key"
+#     range_key           = "ddb-range-key"
+#     read_capacity       = 1
+#     write_capacity      = 1
+#     projection_type     = "KEYS_ONLY"
+#     non_key_attributes  = []
+# }]
 
 

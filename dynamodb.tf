@@ -46,16 +46,17 @@ resource "aws_dynamodb_table" "ddb_table" {
   # }
   local_secondary_index = ["${var.lsi-list}"]
 
-  global_secondary_index {
-    name               = "${var.gsi-name}"
-    hash_key           = "${var.gsi-hash-key}"
-    range_key          = "${var.gsi-range-key}"
-    write_capacity     = "${var.gsi-write-capacity}"
-    read_capacity      = "${var.gsi-read-capacity}"
-    projection_type    = "${var.gsi-projection-type}"
-    non_key_attributes = "${var.gsi-non-key-attributes}"
-  }
-
+  # global_secondary_index {
+  #   name               = "${var.gsi-name}"
+  #   hash_key           = "${var.gsi-hash-key}"
+  #   range_key          = "${var.gsi-range-key}"
+  #   write_capacity     = "${var.gsi-write-capacity}"
+  #   read_capacity      = "${var.gsi-read-capacity}"
+  #   projection_type    = "${var.gsi-projection-type}"
+  #   non_key_attributes = "${var.gsi-non-key-attributes}"
+  # }
+  global_secondary_index = ["${var.gsi-list}"]
+  
   server_side_encryption {
     enabled = "${var.ddb-encryption}"
   }
