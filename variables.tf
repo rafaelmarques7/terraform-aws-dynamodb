@@ -3,6 +3,11 @@ variable "ddb-table-name" {
   type        = "string"
 }
 
+variable "ddb-attributes" {
+  description = "A list of maps with the DynamoDB table attributes."
+  type = "list"
+}
+
 variable "ddb-read-capacity" {
   description = "The read capacity, in units, of the DynamoDB table."
   type        = "string"

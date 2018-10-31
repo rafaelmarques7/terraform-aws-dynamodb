@@ -21,3 +21,4 @@ gsi-projection-type     = "KEYS_ONLY"
 gsi-non-key-attributes  = []
 tags                    = {}
 region                  = "us-east-1"
+ddb-attributes          = []

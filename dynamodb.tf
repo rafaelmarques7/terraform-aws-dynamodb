@@ -1,19 +1,28 @@
+locals {
+  attributes = [
+    {
+      name = "${var.ddb-range-key-name}"
+      type = "${var.ddb-range-key-type}"
+    },
+    {
+      name = "${var.ddb-hash-key-name}"
+      type = "${var.ddb-hash-key-type}"
+    },
+    "${var.ddb-attributes}",
+  ]
+  
+  // Remove the range key, if it is not provided
+  from_index = "${length(var.ddb-range-key-name) > 0 ? 0 : 1}"
+  attributes_final = "${slice(local.attributes, local.from_index, length(local.attributes))}"
+}
+
 resource "aws_dynamodb_table" "ddb_table" {
   name                   = "${var.ddb-table-name}"
   read_capacity          = "${var.ddb-read-capacity}"
   write_capacity         = "${var.ddb-write-capacity}"
   hash_key               = "${var.ddb-hash-key-name}"
   range_key              = "${var.ddb-range-key-name}"
-
-  attribute {
-    name = "${var.ddb-hash-key-name}"
-    type = "${var.ddb-hash-key-type}"
-  }
-
-  attribute {
-    name = "${var.ddb-range-key-name}"
-    type = "${var.ddb-range-key-type}"
-  }
+  attribute              = ["${local.attributes_final}"]
 
   ttl {
     enabled        = "${var.ttl-enabled}"
