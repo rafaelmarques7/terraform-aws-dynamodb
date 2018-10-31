@@ -18,13 +18,6 @@ locals {
   attributes_final = "${slice(local.attributes, local.from_index, length(local.attributes))}"
 }
 
-// Merge the list of LSI maps into a single map
-//
-# resource "null_resource" "lsi_names" {
-#   count = "${length(var.lsi-list)}"
-#   triggers = "${map("name", lookup(var.lsi-list[count.index], "name"))}"
-# }
-
 resource "aws_dynamodb_table" "ddb_table" {
   name                   = "${var.ddb-table-name}"
   read_capacity          = "${var.ddb-read-capacity}"
