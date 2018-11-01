@@ -7,6 +7,7 @@ module "dynamodb" {
 
   // Input arguments
   ddb-table-name = "some-random-name"
+
   ddb-attributes = [
     {
       name = "attribute-1"
@@ -15,8 +16,9 @@ module "dynamodb" {
     {
       name = "attribute-2"
       type = "B"
-    }
+    },
   ]
+
   gsi-list = [
     {
       name               = "gsi-table-1"
@@ -25,7 +27,7 @@ module "dynamodb" {
       read_capacity      = 1
       write_capacity     = 1
       projection_type    = "KEYS_ONLY"
-      non_key_attributes = [] 
+      non_key_attributes = []
     },
     {
       name               = "gsi-table-2"
@@ -34,7 +36,7 @@ module "dynamodb" {
       read_capacity      = 1
       write_capacity     = 1
       projection_type    = "INCLUDE"
-      non_key_attributes = ["attribute-1"] 
-    }
+      non_key_attributes = ["attribute-1"]
+    },
   ]
 }

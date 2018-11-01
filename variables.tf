@@ -32,8 +32,7 @@ variable "ddb-write-capacity" {
   description = "The write capacity, in units, of the DynamoDB table."
   type        = "string"
   default     = 1
-}  
-
+}
 
 variable "ddb-hash-key-name" {
   description = "The primary/partition key name of the DynamoDB table."
@@ -81,6 +80,18 @@ variable "backup-enabled" {
   description = "Determines if backups are provisioned automatically."
   type        = "string"
   default     = false
+}
+
+variable "stream-enabled" {
+  description = "Determines if streams are to be enabled."
+  type        = "string"
+  default     = false
+}
+
+variable "stream-view-type" {
+  description = "Determines what to write to the stream, each time an item is updated. Valid values : KEYS_ONLY, NEW_IMAGE, OLD_IMAGE, NEW_AND_OLD_IMAGES."
+  type        = "string"
+  default     = "KEYS_ONLY"
 }
 
 variable "tags" {
