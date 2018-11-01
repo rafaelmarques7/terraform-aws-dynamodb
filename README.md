@@ -29,6 +29,7 @@ This module does not (yet) provide auto-scaling for the table.
 
 ## Input arguments
 
+This table was generated using the command `terraform-docs markdown .`, given the [terraform-docs library](https://github.com/segmentio/terraform-docs).
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
