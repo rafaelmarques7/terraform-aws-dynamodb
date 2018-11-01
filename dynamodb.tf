@@ -7,6 +7,7 @@ resource "aws_dynamodb_table" "ddb_table" {
   attribute              = ["${local.attributes_final}"]
   local_secondary_index  = ["${var.lsi-list}"]
   global_secondary_index = ["${var.gsi-list}"]
+  tags = "${var.tags}"
 
   ttl {
     enabled        = "${var.ttl-enabled}"
@@ -16,6 +17,8 @@ resource "aws_dynamodb_table" "ddb_table" {
   server_side_encryption {
     enabled = "${var.ddb-encryption}"
   }
-
-  tags = "${var.tags}"
+  
+  point_in_time_recovery {
+    enabled = "${var.backup-enabled}"
+  }
 }

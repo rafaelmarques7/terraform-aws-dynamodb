@@ -77,6 +77,12 @@ variable "ttl-enabled" {
   default     = false
 }
 
+variable "backup-enabled" {
+  description = "Determines if backups are provisioned automatically."
+  type        = "string"
+  default     = false
+}
+
 variable "tags" {
   description = "A map defining pairs of key:values used to tag the DynamoDb table."
   type        = "map"
