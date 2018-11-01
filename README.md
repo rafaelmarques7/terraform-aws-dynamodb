@@ -60,4 +60,29 @@ This table was generated using the command `terraform-docs markdown .`, given th
 
 ## Reading material/resources
 
+* [resource dynamodb table](https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html)
+* [Global Secondary Index](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.html) (good exaplanation with example).
+* [Local Secondary Index](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LSI.html)
+* [Time To Live](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TTL.html)
+* [DynamoDB stream - what, why and how](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html)
+* [point in time recovery](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/PointInTimeRecovery_Howitworks.html)
+* [a similar library](https://github.com/cloudposse/terraform-aws-dynamodb)
+
 ## Notes/Common Problems
+
+* A word about attributes - following the [docs](https://www.terraform.io/docs/providers/aws/r/dynamodb_table.html#global_secondary_index-1) - only define attributes on the table object that are going to be used as:
+
+    * Table hash key or range key
+    * LSI or GSI hash key or range key
+
+* The defintion of *ddb-attributes* (extra attributes besides hash and range), is only valid if these attributes are used by GSI or LSI. 
+
+    * Note that it is not necessary to define these attributes upon creating the table. 
+    It is possible to define them upon writing to the table.
+
+    * The DynamoDB table creation requires only the definition of the SCHEMA.
+    This implies the definition of all the relevant query keys, such as the DDb partition and range keys;
+    the LSI index key; and the GSI partition and range keys.
+
+* Possible improvements:
+    * how to perform input validation
