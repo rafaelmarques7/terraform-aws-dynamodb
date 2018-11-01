@@ -47,8 +47,7 @@ This table was generated using the command `terraform-docs markdown .`, given th
 | lsi-list | A list of LSI map descriptions. | list | `<list>` | no |
 | region | The AWS region. | string | `us-east-1` | no |
 | stream-enabled | Determines if streams are to be enabled. | string | `false` | no |
-| stream-view-type | Determines what to write to the stream, each time an item is updated. Valid values : KEYS_ONLY, NEW_IMAGE, OLD_IMAGE, NEW_AND_OLD_IMAGES. | string |
- `KEYS_ONLY` | no |
+| stream-view-type | Determines what to write to the stream, each time an item is updated. Valid values : KEYS_ONLY, NEW_IMAGE, OLD_IMAGE, NEW_AND_OLD_IMAGES. | string | `KEYS_ONLY` | no |
 | tags | A map defining pairs of key:values used to tag the DynamoDb table. | map | `<map>` | no |
 | ttl-attribute-name | The name of the attribute that is used to determine the TTL. | string | `` | no |
 | ttl-enabled | Determines if the TTL property is applied to the table. | string | `false` | no |
