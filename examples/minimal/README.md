@@ -1,4 +1,4 @@
-# Minimal DynamoDB
+# Minimal DynamoDB example
 
 ## Execution
 

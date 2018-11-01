@@ -1,10 +1,10 @@
 provider "aws" {
-    region = "eu-east-1"
+  region = "eu-east-1"
 }
 
 module "dynamodb" {
-    source = "../../"
+  source = "../../"
 
-    // No input arguments are passed
-    // This creates a minimal table, using the default parameters.  
+  // Input arguments
+  ddb-table-name = "some-random-name"
 }
