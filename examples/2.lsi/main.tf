@@ -6,7 +6,7 @@ module "dynamodb" {
   source = "../../"
 
   // Input arguments
-  ddb-table-name = "some-random-name"
+  ddb-table-name = "lsi-example"
 
   // Declare attributes for table
   ddb-attributes = [

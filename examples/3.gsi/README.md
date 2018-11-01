@@ -1,8 +1,8 @@
-# GSI and attributes configuration - DynamoDB example
+# DynamoDb Global Secondary Index example
 
-Note that this creates a dynamodb table that:
+The configuration provided in this directory creates a DynamoDb table that:
 
-* has the name *some-random-name*;
+* has the name *gsi-example*;
 * has primary key *ddb-hash-key*;
 * has secondary key *ddb-range-key*;
 * has R&W capacity of 1 units;
@@ -10,16 +10,16 @@ Note that this creates a dynamodb table that:
 * does not set the TimeToLive parameter;
 * has no LSI tables;
 * has two GSI tables:
-    * one called *gsi-table-1* with primary key *attribute-1* and secondary key *attribute-2* and R&W capacity at 1 units;
-    * the other called *gsi-table-2* with primary key *attribute-2* and secondary key *ddb-range-key* and R&W capacity at 1 units;
+    * *gsi-table-1* with primary key *attribute-1* and secondary key *attribute-2* and R&W capacity at 1/2 units, respectively, and it projects the keys only;
+    * *gsi-table-2* with primary key *attribute-2* and secondary key *ddb-range-key* and R&W capacity at 2/1 units, respectively, and it also projects *attribute-1*;
 
+## Usage
 
-## Execution
-
-Run the following commands
+To run this example, execute the following commands:
 
 ```bash
 terraform init
-terraform apply   --auto-approve=true
-terraform destroy --auto-approve=true
+terraform plan
+terraform apply   
+terraform destroy 
 ```

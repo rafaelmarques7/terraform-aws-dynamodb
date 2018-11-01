@@ -1,6 +1,6 @@
-# GSI and attributes configuration - DynamoDB example
+# DynamoDb full configuration example
 
-Note that this creates a dynamodb table that:
+The configuration provided in this directory creates a DynamoDb table that:
 
 * has the name *full-example*;
 * has primary key *ID*;
@@ -17,12 +17,13 @@ Note that this creates a dynamodb table that:
     * *gsi-table-2* with primary key *attribute-2* and secondary key *ID* and R&W capacity at 2/1 units, respectively, and it also projects all attributes;
 
 
-## Execution
+## Usage
 
-Run the following commands
+To run this example, execute the following commands:
 
 ```bash
 terraform init
-terraform apply   --auto-approve=true
-terraform destroy --auto-approve=true
+terraform plan
+terraform apply   
+terraform destroy 
 ```
